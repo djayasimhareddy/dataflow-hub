@@ -1,5 +1,4 @@
-# Redpanda + Streamlit services get added here once we build the
-# streaming layer and dashboard — this covers the batch side only.
+# Streamlit dashboard gets added here once we build it.
 
 x-airflow-common: &airflow-common
   build:
@@ -66,6 +65,51 @@ services:
     command: scheduler
     depends_on:
       - airflow-init
+
+  redpanda:
+    image: redpandadata/redpanda:v24.2.7
+    command:
+      - redpanda
+      - start
+      - --smp=1
+      - --memory=512M
+      - --overprovisioned
+      - --node-id=0
+      - --check=false
+      - --kafka-addr=PLAINTEXT://0.0.0.0:9092
+      - --advertise-kafka-addr=PLAINTEXT://redpanda:9092
+    ports:
+      - "9092:9092"
+
+  producer:
+    build:
+      context: ./streaming
+      dockerfile: Dockerfile
+    command: python producer.py
+    environment:
+      REDPANDA_BOOTSTRAP_SERVERS: redpanda:9092
+    depends_on:
+      - redpanda
+    restart: on-failure
+
+  consumer:
+    build:
+      context: ./streaming
+      dockerfile: Dockerfile
+    command: python consumer.py
+    environment:
+      REDPANDA_BOOTSTRAP_SERVERS: redpanda:9092
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      redpanda:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+    restart: on-failure
 
 volumes:
   postgres_data:
