@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: daily_stock_summary
+    description: "Daily return % and 7-day moving average close, per ticker."
+    columns:
+      - name: ticker
+        tests: [not_null]
+      - name: date
+        tests: [not_null]
+      - name: close
+        tests: [not_null]
