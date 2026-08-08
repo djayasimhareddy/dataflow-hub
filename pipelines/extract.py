@@ -5,14 +5,17 @@ Pulls daily stock price data from Alpha Vantage.
 
 Incremental by design: only returns bars newer than the last
 successful run. This isn't just an interview talking point here —
-Alpha Vantage's free tier caps at 5 calls/minute and 500/day, so a
-full re-pull every run would burn through that budget fast.
+Alpha Vantage's free tier is genuinely tight: 1 request/second and
+25 requests/day, confirmed from the API's own rate-limit response.
+A full re-pull every run would burn through that budget in a
+single call.
 
 Lives outside the DAG file on purpose: Airflow doesn't need to be
 running for you to test this function.
 """
 
 import logging
+import time
 from typing import Optional
 
 import requests
@@ -71,7 +74,13 @@ def extract_since(last_fetched_date: Optional[str], api_key: str) -> list[dict]:
     """
     all_records: list[dict] = []
 
-    for ticker in TICKERS:
+    for i, ticker in enumerate(TICKERS):
+        if i > 0:
+            # Free tier throttles at 1 request/second. This is the fix
+            # for the actual failure you hit -- looping through 5
+            # tickers with no delay hit that limit on the 2nd call.
+            time.sleep(15)
+
         logger.info(f"Fetching {ticker} from Alpha Vantage")
         daily_series = fetch_daily_prices(ticker, api_key)
 
