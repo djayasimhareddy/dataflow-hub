@@ -2273,3 +2273,755 @@ where ticker is null
 [0m12:18:53.938387 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768cd92e8d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768cd92e9750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768cdd85c910>]}
 [0m12:18:53.940019 [debug] [MainThread]: Flushing usage events
 [0m12:18:55.243094 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:23:33.478720 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e476d1950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e4759afd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e477ee350>]}
+
+
+============================== 17:23:33.485318 | 774a44e4-4b73-44cb-9e0b-ba1a47a48f85 ==============================
+[0m17:23:33.485318 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:23:33.487104 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'target_path': 'None', 'profiles_dir': '.', 'debug': 'False', 'cache_selected_only': 'False', 'hints_enabled': 'True', 'log_format': 'default', 'static_parser': 'True', 'write_json': 'True', 'quiet': 'False', 'empty': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --profiles-dir .', 'fail_fast': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'introspect': 'True', 'maximum_seed_size_mib': '1', 'log_path': '/opt/airflow/dbt/logs', 'log_cache_events': 'False'}
+[0m17:23:33.676076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '774a44e4-4b73-44cb-9e0b-ba1a47a48f85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e470f9a10>]}
+[0m17:23:33.723395 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '774a44e4-4b73-44cb-9e0b-ba1a47a48f85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e46db5650>]}
+[0m17:23:33.727334 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m17:23:33.795298 [debug] [MainThread]: checksum: 936a9f37119eb5c98547c90f96c535e4d611c4c539c8453d2fb7f5604c98a5ab, vars: {}, profile: dataflow_hub, target: dev, version: 1.12.0
+[0m17:23:34.112573 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:23:34.114766 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:23:34.116592 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:23:34.125397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '774a44e4-4b73-44cb-9e0b-ba1a47a48f85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e47fceb50>]}
+[0m17:23:34.268621 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m17:23:34.278207 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m17:23:34.302089 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt/target/osi_document.json
+[0m17:23:34.333693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '774a44e4-4b73-44cb-9e0b-ba1a47a48f85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e4655be10>]}
+[0m17:23:34.335411 [info ] [MainThread]: Found 2 models, 6 data tests, 1 source, 478 macros
+[0m17:23:34.336938 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '774a44e4-4b73-44cb-9e0b-ba1a47a48f85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e465636d0>]}
+[0m17:23:34.339532 [info ] [MainThread]: 
+[0m17:23:34.340920 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:23:34.342281 [info ] [MainThread]: 
+[0m17:23:34.343807 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:23:34.348376 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dataflow_hub'
+[0m17:23:34.349173 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dataflow_hub'
+[0m17:23:34.393128 [debug] [ThreadPool]: Using postgres connection "list_dataflow_hub"
+[0m17:23:34.393582 [debug] [ThreadPool]: Using postgres connection "list_dataflow_hub"
+[0m17:23:34.394993 [debug] [ThreadPool]: On list_dataflow_hub: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "connection_name": "list_dataflow_hub"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:23:34.396884 [debug] [ThreadPool]: On list_dataflow_hub: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "connection_name": "list_dataflow_hub"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:23:34.398644 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:23:34.400212 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:23:34.407457 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.009 seconds
+[0m17:23:34.407801 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.008 seconds
+[0m17:23:34.409503 [debug] [ThreadPool]: On list_dataflow_hub: Close
+[0m17:23:34.411612 [debug] [ThreadPool]: On list_dataflow_hub: Close
+[0m17:23:34.415416 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dataflow_hub, now list_dataflow_hub_silver)
+[0m17:23:34.415924 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dataflow_hub, now list_dataflow_hub_gold)
+[0m17:23:34.420135 [debug] [ThreadPool]: Using postgres connection "list_dataflow_hub_silver"
+[0m17:23:34.422354 [debug] [ThreadPool]: Using postgres connection "list_dataflow_hub_gold"
+[0m17:23:34.423781 [debug] [ThreadPool]: On list_dataflow_hub_silver: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "connection_name": "list_dataflow_hub_silver"} */
+select
+      'dataflow_hub' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'dataflow_hub' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'dataflow_hub' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'dataflow_hub' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m17:23:34.425243 [debug] [ThreadPool]: On list_dataflow_hub_gold: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "connection_name": "list_dataflow_hub_gold"} */
+select
+      'dataflow_hub' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'dataflow_hub' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'dataflow_hub' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'dataflow_hub' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m17:23:34.426490 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:23:34.427825 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:23:34.442681 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.015 seconds
+[0m17:23:34.443050 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.017 seconds
+[0m17:23:34.445300 [debug] [ThreadPool]: On list_dataflow_hub_gold: ROLLBACK
+[0m17:23:34.447303 [debug] [ThreadPool]: On list_dataflow_hub_silver: ROLLBACK
+[0m17:23:34.448826 [debug] [ThreadPool]: On list_dataflow_hub_gold: Close
+[0m17:23:34.449924 [debug] [ThreadPool]: On list_dataflow_hub_silver: Close
+[0m17:23:34.454889 [debug] [MainThread]: Using postgres connection "master"
+[0m17:23:34.456529 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m17:23:34.457989 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:23:34.468461 [debug] [MainThread]: SQL status: SELECT 0 in 0.010 seconds
+[0m17:23:34.470599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '774a44e4-4b73-44cb-9e0b-ba1a47a48f85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e475a0ad0>]}
+[0m17:23:34.472137 [debug] [MainThread]: On master: ROLLBACK
+[0m17:23:34.474113 [debug] [MainThread]: On master: COMMIT
+[0m17:23:34.475595 [debug] [MainThread]: Using postgres connection "master"
+[0m17:23:34.498166 [debug] [MainThread]: On master: COMMIT
+[0m17:23:34.515687 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m17:23:34.532282 [debug] [MainThread]: On master: Close
+[0m17:23:34.559681 [debug] [Thread-1 (]: Began running node model.dataflow_hub.clean_stock_prices
+[0m17:23:34.567691 [info ] [Thread-1 (]: 1 of 2 START sql table model silver.clean_stock_prices ......................... [RUN]
+[0m17:23:34.570800 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dataflow_hub_silver, now model.dataflow_hub.clean_stock_prices)
+[0m17:23:34.573017 [debug] [Thread-1 (]: Began compiling node model.dataflow_hub.clean_stock_prices
+[0m17:23:34.584123 [debug] [Thread-1 (]: Writing injected SQL for node "model.dataflow_hub.clean_stock_prices"
+[0m17:23:34.604054 [debug] [Thread-1 (]: Began executing node model.dataflow_hub.clean_stock_prices
+[0m17:23:34.631046 [debug] [Thread-1 (]: Writing runtime sql for node "model.dataflow_hub.clean_stock_prices"
+[0m17:23:34.652168 [debug] [Thread-1 (]: Using postgres connection "model.dataflow_hub.clean_stock_prices"
+[0m17:23:34.653447 [debug] [Thread-1 (]: On model.dataflow_hub.clean_stock_prices: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "model.dataflow_hub.clean_stock_prices"} */
+
+  
+    
+
+  create  table "dataflow_hub"."silver"."clean_stock_prices__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- Silver: one row per (ticker, date). Bronze already blocks exact
+-- duplicate (ticker, date) rows via ON CONFLICT DO NOTHING, but this
+-- guards the case where a row gets reloaded — keeps the most
+-- recently loaded row per ticker/date, nothing else.
+
+with ranked as (
+
+    select
+        ticker,
+        date,
+        open,
+        high,
+        low,
+        close,
+        volume,
+        row_number() over (
+            partition by ticker, date
+            order by loaded_at desc
+        ) as rn
+    from "dataflow_hub"."public"."raw_stock_prices"
+
+)
+
+select ticker, date, open, high, low, close, volume
+from ranked
+where rn = 1
+  );
+  
+[0m17:23:34.654741 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:23:34.665487 [debug] [Thread-1 (]: SQL status: SELECT 500 in 0.011 seconds
+[0m17:23:34.673248 [debug] [Thread-1 (]: Using postgres connection "model.dataflow_hub.clean_stock_prices"
+[0m17:23:34.675815 [debug] [Thread-1 (]: On model.dataflow_hub.clean_stock_prices: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "model.dataflow_hub.clean_stock_prices"} */
+alter table "dataflow_hub"."silver"."clean_stock_prices" rename to "clean_stock_prices__dbt_backup"
+[0m17:23:34.678444 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m17:23:34.681508 [debug] [Thread-1 (]: Using postgres connection "model.dataflow_hub.clean_stock_prices"
+[0m17:23:34.683767 [debug] [Thread-1 (]: On model.dataflow_hub.clean_stock_prices: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "model.dataflow_hub.clean_stock_prices"} */
+alter table "dataflow_hub"."silver"."clean_stock_prices__dbt_tmp" rename to "clean_stock_prices"
+[0m17:23:34.686105 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:23:34.699317 [debug] [Thread-1 (]: On model.dataflow_hub.clean_stock_prices: COMMIT
+[0m17:23:34.701386 [debug] [Thread-1 (]: Using postgres connection "model.dataflow_hub.clean_stock_prices"
+[0m17:23:34.703708 [debug] [Thread-1 (]: On model.dataflow_hub.clean_stock_prices: COMMIT
+[0m17:23:34.707003 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m17:23:34.711972 [debug] [Thread-1 (]: Applying DROP to: "dataflow_hub"."silver"."clean_stock_prices__dbt_backup"
+[0m17:23:34.716828 [debug] [Thread-1 (]: Using postgres connection "model.dataflow_hub.clean_stock_prices"
+[0m17:23:34.718925 [debug] [Thread-1 (]: On model.dataflow_hub.clean_stock_prices: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "model.dataflow_hub.clean_stock_prices"} */
+drop table if exists "dataflow_hub"."silver"."clean_stock_prices__dbt_backup" cascade
+[0m17:23:34.726258 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.005 seconds
+[0m17:23:34.730375 [debug] [Thread-1 (]: On model.dataflow_hub.clean_stock_prices: Close
+[0m17:23:34.734125 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '774a44e4-4b73-44cb-9e0b-ba1a47a48f85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e441e84d0>]}
+[0m17:23:34.735896 [info ] [Thread-1 (]: 1 of 2 OK created sql table model silver.clean_stock_prices .................... [[32mSELECT 500[0m in 0.16s]
+[0m17:23:34.737534 [debug] [Thread-1 (]: Finished running node model.dataflow_hub.clean_stock_prices
+[0m17:23:34.739685 [debug] [Thread-3 (]: Began running node model.dataflow_hub.daily_stock_summary
+[0m17:23:34.741192 [info ] [Thread-3 (]: 2 of 2 START sql table model gold.daily_stock_summary .......................... [RUN]
+[0m17:23:34.742972 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.dataflow_hub.daily_stock_summary'
+[0m17:23:34.744660 [debug] [Thread-3 (]: Began compiling node model.dataflow_hub.daily_stock_summary
+[0m17:23:34.747870 [debug] [Thread-3 (]: Writing injected SQL for node "model.dataflow_hub.daily_stock_summary"
+[0m17:23:34.766965 [debug] [Thread-3 (]: Began executing node model.dataflow_hub.daily_stock_summary
+[0m17:23:34.770541 [debug] [Thread-3 (]: Writing runtime sql for node "model.dataflow_hub.daily_stock_summary"
+[0m17:23:34.781432 [debug] [Thread-3 (]: Using postgres connection "model.dataflow_hub.daily_stock_summary"
+[0m17:23:34.782538 [debug] [Thread-3 (]: On model.dataflow_hub.daily_stock_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "model.dataflow_hub.daily_stock_summary"} */
+
+  
+    
+
+  create  table "dataflow_hub"."gold"."daily_stock_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- Gold: daily return % and 7-day moving average close, per ticker.
+
+with prices as (
+    select * from "dataflow_hub"."silver"."clean_stock_prices"
+),
+
+with_lag as (
+    select
+        *,
+        lag(close) over (partition by ticker order by date) as prev_close
+    from prices
+)
+
+select
+    ticker,
+    date,
+    close,
+    round(((close - prev_close) / nullif(prev_close, 0)) * 100, 2) as daily_return_pct,
+    round(
+        avg(close) over (
+            partition by ticker
+            order by date
+            rows between 6 preceding and current row
+        ), 2
+    ) as moving_avg_7d
+from with_lag
+order by ticker, date
+  );
+  
+[0m17:23:34.783825 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m17:23:34.802225 [debug] [Thread-3 (]: SQL status: SELECT 500 in 0.018 seconds
+[0m17:23:34.806341 [debug] [Thread-3 (]: Using postgres connection "model.dataflow_hub.daily_stock_summary"
+[0m17:23:34.807762 [debug] [Thread-3 (]: On model.dataflow_hub.daily_stock_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "model.dataflow_hub.daily_stock_summary"} */
+alter table "dataflow_hub"."gold"."daily_stock_summary" rename to "daily_stock_summary__dbt_backup"
+[0m17:23:34.810132 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m17:23:34.814673 [debug] [Thread-3 (]: Using postgres connection "model.dataflow_hub.daily_stock_summary"
+[0m17:23:34.817162 [debug] [Thread-3 (]: On model.dataflow_hub.daily_stock_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "model.dataflow_hub.daily_stock_summary"} */
+alter table "dataflow_hub"."gold"."daily_stock_summary__dbt_tmp" rename to "daily_stock_summary"
+[0m17:23:34.818991 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:23:34.821207 [debug] [Thread-3 (]: On model.dataflow_hub.daily_stock_summary: COMMIT
+[0m17:23:34.823067 [debug] [Thread-3 (]: Using postgres connection "model.dataflow_hub.daily_stock_summary"
+[0m17:23:34.825086 [debug] [Thread-3 (]: On model.dataflow_hub.daily_stock_summary: COMMIT
+[0m17:23:34.828505 [debug] [Thread-3 (]: SQL status: COMMIT in 0.002 seconds
+[0m17:23:34.831316 [debug] [Thread-3 (]: Applying DROP to: "dataflow_hub"."gold"."daily_stock_summary__dbt_backup"
+[0m17:23:34.833330 [debug] [Thread-3 (]: Using postgres connection "model.dataflow_hub.daily_stock_summary"
+[0m17:23:34.835729 [debug] [Thread-3 (]: On model.dataflow_hub.daily_stock_summary: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "model.dataflow_hub.daily_stock_summary"} */
+drop table if exists "dataflow_hub"."gold"."daily_stock_summary__dbt_backup" cascade
+[0m17:23:34.842847 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.004 seconds
+[0m17:23:34.847250 [debug] [Thread-3 (]: On model.dataflow_hub.daily_stock_summary: Close
+[0m17:23:34.849099 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '774a44e4-4b73-44cb-9e0b-ba1a47a48f85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e441e7550>]}
+[0m17:23:34.853306 [info ] [Thread-3 (]: 2 of 2 OK created sql table model gold.daily_stock_summary ..................... [[32mSELECT 500[0m in 0.11s]
+[0m17:23:34.855165 [debug] [Thread-3 (]: Finished running node model.dataflow_hub.daily_stock_summary
+[0m17:23:34.858241 [debug] [MainThread]: On master: COMMIT
+[0m17:23:34.859777 [debug] [MainThread]: Using postgres connection "master"
+[0m17:23:34.860987 [debug] [MainThread]: On master: COMMIT
+[0m17:23:34.862099 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:23:34.869474 [debug] [MainThread]: SQL status: COMMIT in 0.007 seconds
+[0m17:23:34.871406 [debug] [MainThread]: On master: Close
+[0m17:23:34.873673 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:23:34.875522 [debug] [MainThread]: Connection 'list_dataflow_hub_gold' was properly closed.
+[0m17:23:34.877155 [debug] [MainThread]: Connection 'model.dataflow_hub.clean_stock_prices' was properly closed.
+[0m17:23:34.879301 [debug] [MainThread]: Connection 'model.dataflow_hub.daily_stock_summary' was properly closed.
+[0m17:23:34.881545 [info ] [MainThread]: 
+[0m17:23:34.883455 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 0.54 seconds (0.54s).
+[0m17:23:34.885320 [debug] [MainThread]: Command end result
+[0m17:23:34.965506 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m17:23:34.976906 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m17:23:34.987541 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt/target/osi_document.json
+[0m17:23:35.000836 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt/target/run_results.json
+[0m17:23:35.002382 [info ] [MainThread]: 
+[0m17:23:35.003728 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:23:35.005036 [info ] [MainThread]: 
+[0m17:23:35.006653 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=2
+[0m17:23:35.008623 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.6209537, "process_in_blocks": "0", "process_kernel_time": 0.571906, "process_mem_max_rss": "134412", "process_out_blocks": "520", "process_user_time": 1.964905}
+[0m17:23:35.010284 [debug] [MainThread]: Command `dbt run` succeeded at 17:23:35.010175 after 1.62 seconds
+[0m17:23:35.011747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e4bdb6050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e4780be10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9e475a3890>]}
+[0m17:23:35.013193 [debug] [MainThread]: Flushing usage events
+[0m17:23:37.228585 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:23:38.904105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523c039a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523c0feb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523d443b90>]}
+
+
+============================== 17:23:38.910090 | 5386b769-7007-4cbc-8f38-54388875f3d1 ==============================
+[0m17:23:38.910090 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:23:38.912250 [debug] [MainThread]: running dbt with arguments {'hints_enabled': 'True', 'write_json': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'partial_parse': 'True', 'static_parser': 'True', 'empty': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'fail_fast': 'False', 'printer_width': '80', 'invocation_command': 'dbt test --profiles-dir .', 'debug': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'no_print': 'None', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'log_path': '/opt/airflow/dbt/logs', 'target_path': 'None', 'quiet': 'False', 'maximum_seed_size_mib': '1', 'introspect': 'True'}
+[0m17:23:39.073331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5386b769-7007-4cbc-8f38-54388875f3d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523b702790>]}
+[0m17:23:39.115697 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5386b769-7007-4cbc-8f38-54388875f3d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523e90b490>]}
+[0m17:23:39.119023 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m17:23:39.167363 [debug] [MainThread]: checksum: 936a9f37119eb5c98547c90f96c535e4d611c4c539c8453d2fb7f5604c98a5ab, vars: {}, profile: dataflow_hub, target: dev, version: 1.12.0
+[0m17:23:39.557283 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:23:39.559223 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:23:39.560429 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:23:39.568022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5386b769-7007-4cbc-8f38-54388875f3d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523a7693d0>]}
+[0m17:23:39.710156 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m17:23:39.718045 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m17:23:39.734597 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt/target/osi_document.json
+[0m17:23:39.784448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5386b769-7007-4cbc-8f38-54388875f3d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523a7a1710>]}
+[0m17:23:39.786282 [info ] [MainThread]: Found 2 models, 6 data tests, 1 source, 478 macros
+[0m17:23:39.788128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5386b769-7007-4cbc-8f38-54388875f3d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523bfea290>]}
+[0m17:23:39.791092 [info ] [MainThread]: 
+[0m17:23:39.792725 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:23:39.794254 [info ] [MainThread]: 
+[0m17:23:39.795934 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:23:39.798235 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dataflow_hub_silver'
+[0m17:23:39.799003 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dataflow_hub_gold'
+[0m17:23:39.827579 [debug] [ThreadPool]: Using postgres connection "list_dataflow_hub_silver"
+[0m17:23:39.828023 [debug] [ThreadPool]: Using postgres connection "list_dataflow_hub_gold"
+[0m17:23:39.830405 [debug] [ThreadPool]: On list_dataflow_hub_silver: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "connection_name": "list_dataflow_hub_silver"} */
+select
+      'dataflow_hub' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'dataflow_hub' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'dataflow_hub' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'dataflow_hub' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m17:23:39.832310 [debug] [ThreadPool]: On list_dataflow_hub_gold: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "connection_name": "list_dataflow_hub_gold"} */
+select
+      'dataflow_hub' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'dataflow_hub' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'dataflow_hub' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'dataflow_hub' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m17:23:39.833995 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:23:39.835701 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:23:39.845708 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.012 seconds
+[0m17:23:39.846095 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.010 seconds
+[0m17:23:39.848452 [debug] [ThreadPool]: On list_dataflow_hub_silver: ROLLBACK
+[0m17:23:39.850861 [debug] [ThreadPool]: On list_dataflow_hub_gold: ROLLBACK
+[0m17:23:39.852589 [debug] [ThreadPool]: On list_dataflow_hub_silver: Close
+[0m17:23:39.853955 [debug] [ThreadPool]: On list_dataflow_hub_gold: Close
+[0m17:23:39.860036 [debug] [MainThread]: Using postgres connection "master"
+[0m17:23:39.861414 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m17:23:39.862665 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:23:39.869950 [debug] [MainThread]: SQL status: SELECT 0 in 0.007 seconds
+[0m17:23:39.872444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5386b769-7007-4cbc-8f38-54388875f3d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523ab07810>]}
+[0m17:23:39.874167 [debug] [MainThread]: On master: ROLLBACK
+[0m17:23:39.876043 [debug] [MainThread]: On master: COMMIT
+[0m17:23:39.877860 [debug] [MainThread]: Using postgres connection "master"
+[0m17:23:39.879707 [debug] [MainThread]: On master: COMMIT
+[0m17:23:39.881252 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:23:39.882582 [debug] [MainThread]: On master: Close
+[0m17:23:39.887850 [debug] [Thread-1 (]: Began running node test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696
+[0m17:23:39.888264 [debug] [Thread-2 (]: Began running node test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d
+[0m17:23:39.888704 [debug] [Thread-3 (]: Began running node test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811
+[0m17:23:39.889116 [debug] [Thread-4 (]: Began running node test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332
+[0m17:23:39.889859 [info ] [Thread-1 (]: 1 of 6 START test not_null_clean_stock_prices_close ............................ [RUN]
+[0m17:23:39.891340 [info ] [Thread-2 (]: 2 of 6 START test not_null_clean_stock_prices_date ............................. [RUN]
+[0m17:23:39.892864 [info ] [Thread-3 (]: 3 of 6 START test not_null_clean_stock_prices_ticker ........................... [RUN]
+[0m17:23:39.894335 [info ] [Thread-4 (]: 4 of 6 START test not_null_daily_stock_summary_close ........................... [RUN]
+[0m17:23:39.895793 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dataflow_hub_gold, now test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696)
+[0m17:23:39.897435 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dataflow_hub_silver, now test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d)
+[0m17:23:39.898926 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811'
+[0m17:23:39.900495 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332'
+[0m17:23:39.901874 [debug] [Thread-1 (]: Began compiling node test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696
+[0m17:23:39.904005 [debug] [Thread-2 (]: Began compiling node test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d
+[0m17:23:39.905591 [debug] [Thread-3 (]: Began compiling node test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811
+[0m17:23:39.907062 [debug] [Thread-4 (]: Began compiling node test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332
+[0m17:23:39.921262 [debug] [Thread-1 (]: Writing injected SQL for node "test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696"
+[0m17:23:39.926691 [debug] [Thread-2 (]: Writing injected SQL for node "test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d"
+[0m17:23:39.933598 [debug] [Thread-3 (]: Writing injected SQL for node "test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811"
+[0m17:23:39.940057 [debug] [Thread-4 (]: Writing injected SQL for node "test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332"
+[0m17:23:39.952607 [debug] [Thread-3 (]: Began executing node test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811
+[0m17:23:39.953330 [debug] [Thread-2 (]: Began executing node test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d
+[0m17:23:39.967171 [debug] [Thread-4 (]: Began executing node test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332
+[0m17:23:39.967890 [debug] [Thread-1 (]: Began executing node test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696
+[0m17:23:39.973610 [debug] [Thread-3 (]: Writing runtime sql for node "test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811"
+[0m17:23:39.975818 [debug] [Thread-2 (]: Writing runtime sql for node "test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d"
+[0m17:23:39.979367 [debug] [Thread-4 (]: Writing runtime sql for node "test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332"
+[0m17:23:39.981848 [debug] [Thread-1 (]: Writing runtime sql for node "test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696"
+[0m17:23:39.995813 [debug] [Thread-3 (]: Using postgres connection "test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811"
+[0m17:23:39.996345 [debug] [Thread-2 (]: Using postgres connection "test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d"
+[0m17:23:39.997026 [debug] [Thread-1 (]: Using postgres connection "test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696"
+[0m17:23:39.997600 [debug] [Thread-4 (]: Using postgres connection "test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332"
+[0m17:23:39.998529 [debug] [Thread-3 (]: On test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "dataflow_hub"."silver"."clean_stock_prices"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:23:39.999935 [debug] [Thread-2 (]: On test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select date
+from "dataflow_hub"."silver"."clean_stock_prices"
+where date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:23:40.001278 [debug] [Thread-1 (]: On test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select close
+from "dataflow_hub"."silver"."clean_stock_prices"
+where close is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:23:40.002513 [debug] [Thread-4 (]: On test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select close
+from "dataflow_hub"."gold"."daily_stock_summary"
+where close is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:23:40.003604 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m17:23:40.004699 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m17:23:40.005698 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:23:40.006677 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m17:23:40.014996 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m17:23:40.015564 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.012 seconds
+[0m17:23:40.016173 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m17:23:40.017415 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.011 seconds
+[0m17:23:40.026246 [debug] [Thread-2 (]: On test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d: ROLLBACK
+[0m17:23:40.028959 [debug] [Thread-3 (]: On test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811: ROLLBACK
+[0m17:23:40.031223 [debug] [Thread-1 (]: On test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696: ROLLBACK
+[0m17:23:40.033168 [debug] [Thread-4 (]: On test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332: ROLLBACK
+[0m17:23:40.034627 [debug] [Thread-2 (]: On test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d: Close
+[0m17:23:40.035755 [debug] [Thread-3 (]: On test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811: Close
+[0m17:23:40.036856 [debug] [Thread-1 (]: On test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696: Close
+[0m17:23:40.037854 [debug] [Thread-4 (]: On test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332: Close
+[0m17:23:40.039135 [info ] [Thread-2 (]: 2 of 6 PASS not_null_clean_stock_prices_date ................................... [[32mPASS[0m in 0.14s]
+[0m17:23:40.040251 [info ] [Thread-3 (]: 3 of 6 PASS not_null_clean_stock_prices_ticker ................................. [[32mPASS[0m in 0.14s]
+[0m17:23:40.041478 [info ] [Thread-1 (]: 1 of 6 PASS not_null_clean_stock_prices_close .................................. [[32mPASS[0m in 0.15s]
+[0m17:23:40.042547 [info ] [Thread-4 (]: 4 of 6 PASS not_null_daily_stock_summary_close ................................. [[32mPASS[0m in 0.14s]
+[0m17:23:40.043599 [debug] [Thread-2 (]: Finished running node test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d
+[0m17:23:40.044855 [debug] [Thread-3 (]: Finished running node test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811
+[0m17:23:40.046201 [debug] [Thread-1 (]: Finished running node test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696
+[0m17:23:40.047613 [debug] [Thread-4 (]: Finished running node test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332
+[0m17:23:40.048825 [debug] [Thread-2 (]: Began running node test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7
+[0m17:23:40.050079 [debug] [Thread-3 (]: Began running node test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283
+[0m17:23:40.053326 [info ] [Thread-2 (]: 5 of 6 START test not_null_daily_stock_summary_date ............................ [RUN]
+[0m17:23:40.054783 [info ] [Thread-3 (]: 6 of 6 START test not_null_daily_stock_summary_ticker .......................... [RUN]
+[0m17:23:40.056029 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dataflow_hub.not_null_clean_stock_prices_date.1a054db17d, now test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7)
+[0m17:23:40.057611 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dataflow_hub.not_null_clean_stock_prices_ticker.e50b4ce811, now test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283)
+[0m17:23:40.059256 [debug] [Thread-2 (]: Began compiling node test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7
+[0m17:23:40.060752 [debug] [Thread-3 (]: Began compiling node test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283
+[0m17:23:40.066654 [debug] [Thread-2 (]: Writing injected SQL for node "test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7"
+[0m17:23:40.071792 [debug] [Thread-3 (]: Writing injected SQL for node "test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283"
+[0m17:23:40.081497 [debug] [Thread-2 (]: Began executing node test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7
+[0m17:23:40.083552 [debug] [Thread-2 (]: Writing runtime sql for node "test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7"
+[0m17:23:40.083852 [debug] [Thread-3 (]: Began executing node test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283
+[0m17:23:40.086983 [debug] [Thread-3 (]: Writing runtime sql for node "test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283"
+[0m17:23:40.092349 [debug] [Thread-2 (]: Using postgres connection "test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7"
+[0m17:23:40.093570 [debug] [Thread-2 (]: On test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select date
+from "dataflow_hub"."gold"."daily_stock_summary"
+where date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:23:40.093934 [debug] [Thread-3 (]: Using postgres connection "test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283"
+[0m17:23:40.094885 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m17:23:40.096157 [debug] [Thread-3 (]: On test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "dataflow_hub", "target_name": "dev", "node_id": "test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from "dataflow_hub"."gold"."daily_stock_summary"
+where ticker is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:23:40.098445 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m17:23:40.101639 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m17:23:40.103578 [debug] [Thread-2 (]: On test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7: ROLLBACK
+[0m17:23:40.104461 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m17:23:40.105683 [debug] [Thread-2 (]: On test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7: Close
+[0m17:23:40.107590 [debug] [Thread-3 (]: On test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283: ROLLBACK
+[0m17:23:40.109644 [info ] [Thread-2 (]: 5 of 6 PASS not_null_daily_stock_summary_date .................................. [[32mPASS[0m in 0.05s]
+[0m17:23:40.110977 [debug] [Thread-3 (]: On test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283: Close
+[0m17:23:40.112059 [debug] [Thread-2 (]: Finished running node test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7
+[0m17:23:40.113630 [info ] [Thread-3 (]: 6 of 6 PASS not_null_daily_stock_summary_ticker ................................ [[32mPASS[0m in 0.06s]
+[0m17:23:40.115896 [debug] [Thread-3 (]: Finished running node test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283
+[0m17:23:40.118259 [debug] [MainThread]: On master: COMMIT
+[0m17:23:40.119575 [debug] [MainThread]: Using postgres connection "master"
+[0m17:23:40.120798 [debug] [MainThread]: On master: COMMIT
+[0m17:23:40.121788 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:23:40.126481 [debug] [MainThread]: SQL status: COMMIT in 0.005 seconds
+[0m17:23:40.127719 [debug] [MainThread]: On master: Close
+[0m17:23:40.128941 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:23:40.130279 [debug] [MainThread]: Connection 'test.dataflow_hub.not_null_daily_stock_summary_date.6cd3e2dab7' was properly closed.
+[0m17:23:40.131351 [debug] [MainThread]: Connection 'test.dataflow_hub.not_null_clean_stock_prices_close.1d79f88696' was properly closed.
+[0m17:23:40.132318 [debug] [MainThread]: Connection 'test.dataflow_hub.not_null_daily_stock_summary_ticker.20a2c68283' was properly closed.
+[0m17:23:40.133184 [debug] [MainThread]: Connection 'test.dataflow_hub.not_null_daily_stock_summary_close.e396ac1332' was properly closed.
+[0m17:23:40.134204 [info ] [MainThread]: 
+[0m17:23:40.135478 [info ] [MainThread]: Finished running 6 data tests in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m17:23:40.137245 [debug] [MainThread]: Command end result
+[0m17:23:40.188593 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m17:23:40.195252 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m17:23:40.200762 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt/target/osi_document.json
+[0m17:23:40.211847 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt/target/run_results.json
+[0m17:23:40.212681 [info ] [MainThread]: 
+[0m17:23:40.213976 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:23:40.214849 [info ] [MainThread]: 
+[0m17:23:40.215965 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+[0m17:23:40.217463 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.3001785, "process_in_blocks": "0", "process_kernel_time": 0.211671, "process_mem_max_rss": "136268", "process_out_blocks": "0", "process_user_time": 1.881084}
+[0m17:23:40.218580 [debug] [MainThread]: Command `dbt test` succeeded at 17:23:40.218503 after 1.30 seconds
+[0m17:23:40.219507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c523c150fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c524049c810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c524049ed10>]}
+[0m17:23:40.220417 [debug] [MainThread]: Flushing usage events
+[0m17:23:41.591643 [debug] [MainThread]: An error was encountered while trying to flush usage events
