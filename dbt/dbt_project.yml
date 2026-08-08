@@ -1,0 +1,20 @@
+name: 'dataflow_hub'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dataflow_hub'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dataflow_hub:
+    silver:
+      +materialized: table
+      +schema: silver
+    gold:
+      +materialized: table
+      +schema: gold

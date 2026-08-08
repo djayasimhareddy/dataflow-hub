@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: clean_stock_prices
+    description: "Deduplicated, typed daily stock prices — one row per (ticker, date)."
+    columns:
+      - name: ticker
+        tests: [not_null]
+      - name: date
+        tests: [not_null]
+      - name: close
+        tests: [not_null]
