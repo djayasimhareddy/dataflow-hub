@@ -16,7 +16,6 @@ running for you to test this function.
 
 import logging
 import time
-from typing import Optional
 
 import requests
 
@@ -60,7 +59,7 @@ def fetch_daily_prices(ticker: str, api_key: str) -> dict:
     return data["Time Series (Daily)"]
 
 
-def extract_since(last_fetched_date: Optional[str], api_key: str) -> list[dict]:
+def extract_since(last_fetched_date: str | None, api_key: str) -> list[dict]:
     """
     Extracts daily bars for all TICKERS, filtered to dates strictly
     after last_fetched_date.

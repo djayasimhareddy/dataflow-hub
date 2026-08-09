@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 def _fetch_bronze_as_dataframe() -> pd.DataFrame:
     conn = psycopg2.connect(
         host=os.environ["POSTGRES_HOST"],
-        port=os.environ.get("POSTGRES_PORT", 5432),
+        port=os.environ.get("POSTGRES_PORT", "5432"),
         dbname=os.environ["POSTGRES_DB"],
         user=os.environ["POSTGRES_USER"],
         password=os.environ["POSTGRES_PASSWORD"],

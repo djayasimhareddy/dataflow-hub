@@ -17,7 +17,6 @@ from datetime import datetime, timezone
 
 from kafka import KafkaProducer
 from pydantic import ValidationError
-
 from schemas import TransactionEvent
 
 logging.basicConfig(level=logging.INFO)

@@ -11,7 +11,7 @@ Two tabs:
 """
 
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import pandas as pd
 import psycopg2
@@ -19,12 +19,13 @@ import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(page_title="DataFlow Hub", layout="wide")
+DB_EXCEPTIONS = (psycopg2.Error, KeyError, IndexError, TypeError, ValueError)
 
 
 def get_connection():
     return psycopg2.connect(
         host=os.environ["POSTGRES_HOST"],
-        port=os.environ.get("POSTGRES_PORT", 5432),
+        port=os.environ.get("POSTGRES_PORT", "5432"),
         dbname=os.environ["POSTGRES_DB"],
         user=os.environ["POSTGRES_USER"],
         password=os.environ["POSTGRES_PASSWORD"],
@@ -62,22 +63,22 @@ with tab1:
                 color = {"success": "green", "failed": "red"}.get(row["state"], "orange")
                 col.markdown(f"**{row['task_id']}**")
                 col.markdown(f":{color}[{row['state']}]")
-    except Exception as e:
+    except DB_EXCEPTIONS as e:
         st.warning(f"Could not read Airflow task state: {e}")
 
     st.subheader("Row counts per layer")
     c1, c2, c3 = st.columns(3)
     try:
         c1.metric("Bronze -- raw_stock_prices", int(run_query("SELECT COUNT(*) AS n FROM raw_stock_prices")["n"][0]))
-    except Exception:
+    except DB_EXCEPTIONS:
         c1.metric("Bronze -- raw_stock_prices", "n/a")
     try:
         c2.metric("Silver -- clean_stock_prices", int(run_query("SELECT COUNT(*) AS n FROM silver.clean_stock_prices")["n"][0]))
-    except Exception:
+    except DB_EXCEPTIONS:
         c2.metric("Silver -- clean_stock_prices", "n/a")
     try:
         c3.metric("Gold -- daily_stock_summary", int(run_query("SELECT COUNT(*) AS n FROM gold.daily_stock_summary")["n"][0]))
-    except Exception:
+    except DB_EXCEPTIONS:
         c3.metric("Gold -- daily_stock_summary", "n/a")
 
     st.subheader("Closing price by ticker")
@@ -87,7 +88,7 @@ with tab1:
             st.line_chart(prices.pivot(index="date", columns="ticker", values="close"))
         else:
             st.info("No Gold data yet -- trigger the batch DAG.")
-    except Exception as e:
+    except DB_EXCEPTIONS as e:
         st.warning(f"Could not load chart: {e}")
 
     st.caption(
@@ -102,13 +103,13 @@ with tab2:
 
     st.subheader("Throughput")
     try:
-        window_start = datetime.utcnow() - timedelta(seconds=30)
+        window_start = datetime.now(timezone.utc) - timedelta(seconds=30)
         recent = run_query(
             "SELECT COUNT(*) AS n FROM gold.transaction_analytics WHERE processed_at >= %s",
             params=(window_start,),
         )
         st.metric("Events/sec (last 30s)", round(recent["n"][0] / 30, 2))
-    except Exception as e:
+    except DB_EXCEPTIONS as e:
         st.warning(f"Could not compute throughput: {e}")
 
     st.subheader("Live transaction feed")
@@ -123,7 +124,7 @@ with tab2:
             """
         )
         st.dataframe(live, use_container_width=True)
-    except Exception as e:
+    except DB_EXCEPTIONS as e:
         st.warning(f"Could not load live feed: {e}")
 
     st.subheader("Alerts (high-value or high-velocity)")
@@ -142,7 +143,7 @@ with tab2:
             st.info("No alerts yet -- start the producer/consumer to generate live traffic.")
         else:
             st.dataframe(alerts, use_container_width=True)
-    except Exception as e:
+    except DB_EXCEPTIONS as e:
         st.warning(f"Could not load alerts: {e}")
 
     st.subheader("Top merchants by volume")
@@ -157,5 +158,5 @@ with tab2:
             """
         )
         st.bar_chart(top_merchants.set_index("merchant"))
-    except Exception as e:
+    except DB_EXCEPTIONS as e:
         st.warning(f"Could not load top merchants: {e}")

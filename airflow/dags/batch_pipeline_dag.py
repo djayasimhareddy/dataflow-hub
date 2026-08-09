@@ -12,7 +12,7 @@ raw data. If a dbt test fails, the task fails -- no silent pass.
 
 import logging
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from airflow.decorators import dag, task
 from airflow.models import Variable
@@ -20,9 +20,9 @@ from airflow.operators.bash import BashOperator
 
 sys.path.append("/opt/airflow")
 
+from data_quality.validate_bronze import validate_bronze
 from pipelines.extract import extract_since
 from pipelines.load import load_to_bronze
-from data_quality.validate_bronze import validate_bronze
 
 logger = logging.getLogger(__name__)
 
@@ -36,7 +36,7 @@ default_args = {
 @dag(
     dag_id="batch_pipeline_dag",
     schedule="@daily",
-    start_date=datetime(2026, 1, 1),
+    start_date=datetime(2026, 1, 1, tzinfo=timezone.utc),
     catchup=False,
     default_args=default_args,
     tags=["dataflow-hub", "batch"],

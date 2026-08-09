@@ -25,7 +25,6 @@ from datetime import datetime, timedelta
 import psycopg2
 from kafka import KafkaConsumer
 from pydantic import ValidationError
-
 from schemas import TransactionEvent
 
 logging.basicConfig(level=logging.INFO)
@@ -94,7 +93,7 @@ ON CONFLICT (transaction_id) DO UPDATE SET
 def get_connection():
     return psycopg2.connect(
         host=os.environ["POSTGRES_HOST"],
-        port=os.environ.get("POSTGRES_PORT", 5432),
+        port=os.environ.get("POSTGRES_PORT", "5432"),
         dbname=os.environ["POSTGRES_DB"],
         user=os.environ["POSTGRES_USER"],
         password=os.environ["POSTGRES_PASSWORD"],
