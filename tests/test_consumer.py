@@ -11,9 +11,8 @@ from datetime import datetime, timedelta, timezone
 from unittest.mock import MagicMock
 
 import pytest
-from pydantic import ValidationError
-
 from consumer import AccountState, process_event
+from pydantic import ValidationError
 from schemas import TransactionEvent
 
 
