@@ -11,10 +11,9 @@ same project.
 """
 
 import logging
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 
 from airflow.decorators import dag, task
-from airflow.hooks.base import BaseHook
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +29,7 @@ default_args = {
 @dag(
     dag_id="weekly_cleanup_dag",
     schedule="@weekly",
-    start_date=datetime(2026, 1, 1),
+    start_date=datetime(2026, 1, 1, tzinfo=UTC),
     catchup=False,
     default_args=default_args,
     tags=["dataflow-hub", "maintenance"],
@@ -44,7 +43,7 @@ def weekly_cleanup():
 
         conn = psycopg2.connect(
             host=os.environ["POSTGRES_HOST"],
-            port=os.environ.get("POSTGRES_PORT", 5432),
+            port=int(os.environ.get("POSTGRES_PORT", "5432")),
             dbname=os.environ["POSTGRES_DB"],
             user=os.environ["POSTGRES_USER"],
             password=os.environ["POSTGRES_PASSWORD"],
